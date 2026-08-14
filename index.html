@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Hide browser default password reveal icons -->
+    <style>
+        input::-ms-reveal,
+        input::-ms-clear {
+            display: none;
+        }
+    </style>
+
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="form-box" id="login-form">
+            <h2>Login</h2>
+            
+            <form action="">
+                <!-- Email Input -->
+                <input type="email" name="email" placeholder="Email" required>
+                
+                <!-- Password Field Outer Wrapper -->
+                <div class="password-wrapper">
+                    <input 
+                        type="password" 
+                        id="passwordInput" 
+                        name="password" 
+                        placeholder="Password" 
+                        required 
+                        minlength="8"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                        title="Must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, and 1 number."
+                    >
+                    <button type="button" id="togglePassword" aria-label="Toggle password visibility">
+                        <!-- Open Eye Icon -->
+                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <!-- Eye Off Icon -->
+                        <svg id="eyeOffIcon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858-5.908A8.962 8.962 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M3 3l18 18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
