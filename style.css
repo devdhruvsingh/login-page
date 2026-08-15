@@ -1,7 +1,4 @@
-@import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
 
 * {
     margin: 0;
@@ -14,24 +11,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(0.5turn, #18181b 0%, #09090b 100%);
     color: #fff;
 }
 
 .container {
-    margin: 0 15px;
+    margin: 20px 15px;
     width: 100%;
     max-width: 450px;
 }
 
-#login-form {
+
+.form-box {
     width: 100%;
     background-color: #1a1a1a;
     padding: 30px;
     border-radius: 20px;
-   box-shadow: 0 0 25px rgba(96, 165, 250, 0.25), 0 10px 30px rgba(0, 0, 0, 0.8);
-}
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.25), 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
@@ -39,6 +36,7 @@ h2 {
     text-align: center;
     margin-bottom: 25px;
 }
+
 
 form a {
     color: #60a5fa;
@@ -55,19 +53,28 @@ form a:active {
     color: #f43f5e;
 }
 
-input {
+p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
-    padding: 12px;
+    padding: 14px 16px;
     border-radius: 20px;
     border: none;
     background: #fff;
     font-size: 16px;
-    color: black;
+    color: #000;
+    margin-bottom: 20px;
+    outline: none;
+    display: block;
 }
 
-input[type="email"] {
-    margin-bottom: 20px;
-}
 
 .password-wrapper {
     position: relative;
@@ -75,40 +82,54 @@ input[type="email"] {
     margin-bottom: 20px;
 }
 
-.password-wrapper input[type="password"],
-.password-wrapper input[type="text"] {
-    padding-right: 45px; 
+
+.password-wrapper input {
+    margin-bottom: 0 !important;
+    padding-right: 45px !important;
 }
 
+
+.togglePassword,
 #togglePassword {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
+    background: transparent;
     border: none;
     padding: 0;
     margin: 0;
     width: auto;
+    height: auto;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000; 
+    color: #000;
 }
 
+
 button[type="submit"] {
+    display: block;
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     background: linear-gradient(90deg, #6366f1 0%, #a855f7 100%);
-    color: #000;
+    color: #fff;
     font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
     margin-bottom: 15px;
+    transition: opacity 0.3s ease;
 }
 
 button[type="submit"]:hover {
     opacity: 0.9;
+}
+
+
+.hidden {
+    display: none !important;
 }
